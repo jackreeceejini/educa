@@ -45,7 +45,7 @@ class Module(models.Model):
         return f'{self.order}. {self.title}'
 
 class Content(models.Model):
-    module = models.ForeignKey(Module, related_name='contacts', on_delete=models.CASCADE)
+    module = models.ForeignKey(Module, related_name='contents', on_delete=models.CASCADE)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE,
     limit_choices_to={'model__in':(
         'text','video','image','file'
@@ -79,7 +79,7 @@ class File(ItemBase):
 class Image(ItemBase):
     file = models.FileField(upload_to='images')
 
-class video(ItemBase):
+class Video(ItemBase):
     url = models.URLField() 
 
 
