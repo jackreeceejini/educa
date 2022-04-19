@@ -1,0 +1,1 @@
+from educa.settings.base import * 
